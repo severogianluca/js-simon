@@ -34,3 +34,19 @@ for(let i = 0; i < 5; i++){
     elementNumber.appendChild(listItem); 
     
 }
+// utilizzo il querySelectorAll per selezionare il div che contiene tutti gli input quindi 
+// prendo l'id del div con # e scrivo input per prendere i figli
+let elementInputGroup = document.querySelectorAll('#input-group input');
+console.log(elementInputGroup)
+elementAnswers.addEventListener('submit', function(event){
+    event.preventDefault();
+    // creo una lista vuota per inserire i numeri degli input
+    let listRisposta = [];
+    for(let i = 0; i < elementInputGroup.length; i++){
+        let risposta = elementInputGroup[i].value;
+        // i numeri inseriti li butto dentro la nuova lista
+        listRisposta.push(risposta);
+    }
+    console.log("Risposte inserite:", listRisposta);
+
+})
